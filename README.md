@@ -1,6 +1,48 @@
 # study-git_action
 
 
+# client-next
+
+- Language : typescript
+- IDE : vscode
+- Framework : Next.js
+- State Management : zustand
+
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+## Getting Started
+
+First, run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
 # Github-action
 
 쉽게 말해서 워크플로우를 자동화 시켜주는 도구다. 자동배포, 린트체크, 자동화 스크립트 처리 등을 할 수 있다.
@@ -16,36 +58,33 @@ Events
 
 workflow를 트리거하는 특정 활동
 ex) 특정 브랜치 push, pr, cron
-Jobs
 
-동일한 runner에서 실행되는 일련의 단계
-기본적으로 여러 job이 있는 workflow는 병렬로 실행(순차적으로도 가능)
-Steps
-
-job에서 명령을 실행할 수 있는 개별 작업
-Actions
-
-job을 생성하는 단계로 결합되는 독립 실행형 명령
-workflow의 가장 작은 이식 가능한 구성 요소
-github 커뮤니티에서 만든 작업 사용가능
-Runners
-
-GitHub Actions 러너 애플리케이션이 설치된 서버
-GitHub에서 호스팅하는 러너를 사용하거나 직접 호스팅할 수 있습니다. 러너는 사용 가능한 작업을 수신 대기하고 한 번에 하나의 작업을 실행하고 진행 상황, 로그 및 결과를 다시 GitHub에 보고합니다. GitHub 호스팅 러너는 Ubuntu Linux, Microsoft Windows 및 macOS를 기반으로 하며 워크플로의 각 작업은 새로운 가상 환경에서 실행됩니다. GitHub 호스팅 러너에 대한 자세한 내용은 " GitHub 호스팅 러너 정보 ."를 참조하십시오 . 다른 운영 체제가 필요하거나 특정 하드웨어 구성이 필요한 경우 자체 러너를 호스팅할 수 있습니다. 자체 호스팅 러너에 대한 정보는 " 자신의 러너 호스팅 "을 참조하십시오 .
-Github Actions workflow 명령어
-먼저 기본 명령어에 대해서 알아야한다.
+- Jobs
+  동일한 runner에서 실행되는 일련의 단계
+  기본적으로 여러 job이 있는 workflow는 병렬로 실행(순차적으로도 가능)
+- Steps
+  job에서 명령을 실행할 수 있는 개별 작업
+- Actions
+  job을 생성하는 단계로 결합되는 독립 실행형 명령
+  workflow의 가장 작은 이식 가능한 구성 요소
+  github 커뮤니티에서 만든 작업 사용가능
+- Runners
+  GitHub Actions 러너 애플리케이션이 설치된 서버
+  GitHub에서 호스팅하는 러너를 사용하거나 직접 호스팅할 수 있습니다. 러너는 사용 가능한 작업을 수신 대기하고 한 번에 하나의 작업을 실행하고 진행 상황, 로그 및 결과를 다시 GitHub에 보고합니다. GitHub 호스팅 러너는 Ubuntu Linux, Microsoft Windows 및 macOS를 기반으로 하며 워크플로의 각 작업은 새로운 가상 환경에서 실행됩니다. GitHub 호스팅 러너에 대한 자세한 내용은 " GitHub 호스팅 러너 정보 ."를 참조하십시오 . 다른 운영 체제가 필요하거나 특정 하드웨어 구성이 필요한 경우 자체 러너를 호스팅할 수 있습니다. 자체 호스팅 러너에 대한 정보는 " 자신의 러너 호스팅 "을 참조하십시오 .
+  Github Actions workflow 명령어
+  먼저 기본 명령어에 대해서 알아야한다.
 
 name: learn-github-actions
 
-GitHub 리포지토리의 작업 탭에 표시될 워크플로의 이름(선택)
+- GitHub 리포지토리의 작업 탭에 표시될 워크플로의 이름(선택)
 
 on: [push]
 
-워크플로 파일을 자동으로 트리거하는 이벤트를 지정 (ex) push, pull_request)
+- 워크플로 파일을 자동으로 트리거하는 이벤트를 지정 (ex) push, pull_request)
 
 jobs:
 
-모든 작업을 함께 그룹화
+- 모든 작업을 함께 그룹화
 
 check-bats-version:
 
